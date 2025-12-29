@@ -21,11 +21,24 @@
 					80
 				],
 				"python.defaultInterpreterPath": "/opt/conda/envs/py_env/bin/python",
-				"python.formatting.autopep8Path": "/opt/conda/envs/py_env/bin/autopep8",
+
+				// --- Formatting with Black ---
+				"python.formatting.provider": "black",
 				"python.formatting.blackPath": "/opt/conda/envs/py_env/bin/black",
+
+				// --- Linting with flake8 ---
 				"python.linting.flake8Path": "/opt/conda/envs/py_env/bin/flake8",
 				"python.linting.flake8Enabled": true,
-				"python.sortImports.path": "/opt/conda/envs/py_env/bin/isort"
+				"python.linting.enabled": true,
+				"python.linting.lintOnSave": true,
+
+				"python.sortImports.path": "/opt/conda/envs/py_env/bin/isort",
+				
+
+				// You can tweak flake8 args to match Black’s line length:
+				"python.linting.flake8Args": [
+					"--max-line-length=80"
+				]
 			},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
